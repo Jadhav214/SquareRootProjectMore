@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title> sqare root finder app by Kamal Sir </title>
+	<style>
+	* { font-size:50px; font-family:Impact; }
+	body { background-color:lightyellow; }
+	</style>
+	<script>
+		function check()
+		{
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+			
+			if(num.value == "")
+			{
+				alert("You need to add number");
+				ans.innerHTML="";
+				num.focus();
+				return;
+			}
+			let n = parseFloat(num.value);
+			if(num.value < 0){
+				alert("You need to add positive number");
+				ans.innerHTML="";
+				num.focus();
+				return;
+			}
+			let r = Math.sqrt(n);
+			ans.innerHTML =r;
+		}
+	</script>
+</head>
+<body>
+<center>
+	<h1> Square root of given number	 </h1>
+	<form onsubmit="check()">
+	<input type="number" step="any" id="num" placeholder="Enter Number"/>
+	<br><br>
+	<input type="submit" value="Find Sqrt"/>
+	</form>
+	<h1 id="ans"/>
+ </center>
+</body>
+</html>
